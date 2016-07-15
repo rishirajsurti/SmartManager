@@ -1,0 +1,55 @@
+﻿<Page
+    x:Class="SmartManager.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#4183d7"/>
+            <Setter Property="Height" Value="133" />
+            <Setter Property="Width" Value="167.5" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Foreground" Value="White" />
+            <!-- <Setter /> -->
+        </Style>
+    </Page.Resources>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,-68,0,68">
+        <Button x:Name="classesBtn" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Classes" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top" Click="classes_Click"/>
+        <Button x:Name="codingBtn" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Coding" HorizontalAlignment="Left" Margin="185,69,0,0" VerticalAlignment="Top" Click="coding_Click"/>
+        <Button x:Name="fitnessBtn" HorizontalAlignment="Left" Margin="10,207,0,0" VerticalAlignment="Top" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Fitness" Click="fitness_Click"/>
+        <Button x:Name="sleepBtn" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Sleep" HorizontalAlignment="Left" Margin="185,207,0,0" VerticalAlignment="Top" Click="sleep_Click"/>
+        <Button x:Name="entertainmentBtn" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Entertainment" Click="ent_Click"/>
+        <Button x:Name="socialBtn" HorizontalAlignment="Left" Margin="185,345,0,0" VerticalAlignment="Top" Content="&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Social" Click="social_Click"/>
+        <TextBox x:Name="activity" HorizontalAlignment="Left" Margin="10,483,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Width="340" TextChanged="textBox_TextChanged" BorderBrush="{x:Null}" TextAlignment="Center"/>
+        <TextBlock x:Name="classesTextBlock" HorizontalAlignment="Left" Margin="10,69,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="codingTextBlock" HorizontalAlignment="Left" Margin="176,69,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Height="43" Width="174" FontSize="32" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="fitnessTextBlock" HorizontalAlignment="Left" Margin="10,210,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" RenderTransformOrigin="0.515,2.672" Foreground="White"/>
+        <TextBlock x:Name="sleepTextBlock" HorizontalAlignment="Left" Margin="189,210,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="entTextBlock" HorizontalAlignment="Left" Margin="10,345,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" RenderTransformOrigin="0.592,5.089" Foreground="White"/>
+        <TextBlock x:Name="socialTextBlock" HorizontalAlignment="Left" Margin="189,345,0,0" TextWrapping="Wrap" Text="00:00:00" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" RenderTransformOrigin="1.441,6.075" Foreground="White"/>
+        <TextBlock x:Name="entPc" HorizontalAlignment="Left" Margin="10,393,0,0" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" RenderTransformOrigin="0.592,5.089" Foreground="White"/>
+        <TextBlock x:Name="socialPc" HorizontalAlignment="Left" Margin="189,388,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" RenderTransformOrigin="1.441,6.075" Foreground="White">
+        	<Run Text="0%"/>
+        	<LineBreak/>
+        	<Run Text=""/>
+        </TextBlock>
+        <TextBlock x:Name="classesPc" HorizontalAlignment="Left" Margin="10,117,0,0" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" SelectionChanged="classesTextBlock_Copy_SelectionChanged" Foreground="White"/>
+        <TextBlock x:Name="codingPc" HorizontalAlignment="Left" Margin="189,112,0,0" TextWrapping="Wrap" Text="0%" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" Foreground="White"/>
+        <TextBlock x:Name="fitnessPc" HorizontalAlignment="Left" Margin="10,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="170" FontSize="32" TextAlignment="Center" RenderTransformOrigin="0.515,2.672" Foreground="White">
+        	<Run Text="0%"/>
+        	<LineBreak/>
+        	<Run Text=""/>
+        </TextBlock>
+        <TextBlock x:Name="sleepPc" HorizontalAlignment="Left" Margin="189,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" Width="161" FontSize="32" TextAlignment="Center" Foreground="White">
+        	<Run Text="0%"/>
+        	<LineBreak/>
+        	<Run Text=""/>
+        </TextBlock>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,12,0,0" TextWrapping="Wrap" Text="Smart Time Manager" VerticalAlignment="Top" Width="340" Height="52" SelectionChanged="textBlock_SelectionChanged" FontSize="32" FontWeight="Bold"/>
+        <HyperlinkButton Content="About" HorizontalAlignment="Left" Margin="93,518,0,0" VerticalAlignment="Top" Width="175" Click="HyperlinkButton_Click"/>
+
+    </Grid>
+</Page>
